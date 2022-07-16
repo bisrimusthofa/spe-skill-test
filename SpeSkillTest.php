@@ -40,6 +40,17 @@ class SpeSkillTest
             return $even[0];
         }    
     }
+
+    public static function needleInHaystack(array $array, $needle)
+    {
+        foreach ($array as $key => $val) {
+            if (strcmp($val, $needle) === 0) {
+                return $key;
+            }
+        }
+
+        return false;
+    }
 }
 
 /**
@@ -52,3 +63,9 @@ echo $narcis;
  * PARITY OUTLIER
  */
 $parityOutlier = SpeSkillTest::parityOutlier([160, 3, 1719, 19, 11, 13, -21]);
+
+
+/**
+ * NEEDLE IN THE HAYSTACK
+ */
+$needleInHaystack = SpeSkillTest::needleInHaystack(["red", "blue", "yellow", "black", "grey"], "blue");
