@@ -17,6 +17,29 @@ class SpeSkillTest
     	
     	return $temp == $sum;
     }
+
+    public static function parityOutlier(array $arr)
+    {
+        $odd = array();
+        $even = array();
+    
+        foreach ($arr as $val) {
+            if ($val % 2 === 0) {
+                array_push($even, $val);
+            } else {
+                array_push($odd, $val);
+            }
+        }
+        
+        if(count($even) > count($odd))
+        {
+            return $odd[0];
+        } else if(count($even) === 0 || count($odd) === 0 ) {
+            return false;
+        } else {
+            return $even[0];
+        }    
+    }
 }
 
 /**
@@ -24,3 +47,8 @@ class SpeSkillTest
  */
 $narcis = SpeSkillTest::findNarcis(153);
 echo $narcis;
+
+/**
+ * PARITY OUTLIER
+ */
+$parityOutlier = SpeSkillTest::parityOutlier([160, 3, 1719, 19, 11, 13, -21]);
