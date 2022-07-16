@@ -51,6 +51,17 @@ class SpeSkillTest
 
         return false;
     }
+
+    public static function blueOceanReverse(array $arrFirst, array $arraySecond)
+    {
+      foreach ($arrFirst as $key => $value) {
+        if ($value == $arraySecond[0]) {
+          unset($arrFirst[$key]);
+        }
+      }
+  
+      return $arrFirst;
+    }
 }
 
 /**
@@ -69,3 +80,10 @@ $parityOutlier = SpeSkillTest::parityOutlier([160, 3, 1719, 19, 11, 13, -21]);
  * NEEDLE IN THE HAYSTACK
  */
 $needleInHaystack = SpeSkillTest::needleInHaystack(["red", "blue", "yellow", "black", "grey"], "blue");
+
+
+/**
+ * THE BLUE OCEAN REVERSE
+ */
+$reveses = SpeSkillTest::blueOceanReverse([1,5,5,5,5,3], [5]);
+var_dump($reveses);
