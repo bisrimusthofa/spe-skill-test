@@ -74,13 +74,13 @@ echo $narcis;
  * PARITY OUTLIER
  */
 $parityOutlier = SpeSkillTest::parityOutlier([160, 3, 1719, 19, 11, 13, -21]);
-
+echo $parityOutlier;
 
 /**
  * NEEDLE IN THE HAYSTACK
  */
 $needleInHaystack = SpeSkillTest::needleInHaystack(["red", "blue", "yellow", "black", "grey"], "blue");
-
+echo $needleInHaystack;
 
 /**
  * THE BLUE OCEAN REVERSE
